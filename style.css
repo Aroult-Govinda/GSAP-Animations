@@ -11,6 +11,11 @@ body {
   background-color: var(--bg);
   font-family: var(--font);
   padding: 2vh 10vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  overflow: hidden;
 }
 
 @font-face {
@@ -182,36 +187,81 @@ body {
   width: 100%;
   height: 100%;
   /* background-color: red; */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 5vh;
 }
 
-.section2 .services .card .box {
-  /* background-color: #cdee2c; */
-  height: 90%;
+.box {
+  height: 45%;
+  width: 45%;
+  border: 2px solid var(--color2);
   border-radius: 5vh;
-  border: 2px solid var(--fontcolor);
-  box-shadow: 0vh 1vh 0 var(--color2);
+  box-shadow: 0vh 1vh 0vh var(--color2);
   display: flex;
   padding: 5vh;
+  overflow: hidden;
+  /* background-color: #b9ff64; */
+  /* align-items: center; */
+  justify-content: center;
 }
 
-.section2 .services .card .box .left h1{
-  background-color: #b9ff64;
+.box.row1.even,
+.row2.odd {
+  color: var(--bg);
+  background-color: var(--color2);
+  box-shadow: 0vh 1vh 0vh var(--color2);
+}
+
+.box.row1.even .left h1,
+.row2.odd .left h1{
+  color: var(--fontcolor);
+  background-color: var(--bg);
+}
+
+.box.row1.even .left span i,
+.row2.odd .left span i{
+  color: var(--fontcolor);
+  background-color: var(--bg);
+}
+
+.box .left {
+  width: 40%;
+  /* background-color: red; */
+}
+
+.box .right {
   width: 60%;
-}
-
-.section2 .services .card .box .right{
-  height: 70%;
-  width: 50%;
-}
-
-.section2 .services .card .box .right img{
-  width: 100%;
   height: 100%;
-  object-fit: fill;
+}
+
+.box .left h1 {
+  padding: 1vh;
+  margin-bottom: 15vh;
+  background-color: var(--color1);
+  border-radius: 1vh;
+}
+
+.box .left span {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  font-size: 2vh;
+  align-items: center;
+  gap: 1vh;
+}
+
+.box .left span i {
+  font-size: 4vh;
+  color: var(--color1);
+  background-color: var(--color2);
+  border-radius: 50%;
+}
+
+.box .right img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .section3 {
@@ -229,6 +279,11 @@ body {
   justify-content: space-between;
   padding: 5vh;
   margin-bottom: 20vh;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url(./Images/stars-pattern-black-and-white-wallpaper-preview.jpg);
 }
 
 .section3 .things-section .left {
@@ -265,7 +320,7 @@ body {
 .section3 .things-section .right img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .section3 .case-study .headline {
@@ -304,27 +359,27 @@ body {
   margin-bottom: 5vh;
 }
 
-.section3 .case-study .card-section .card{
+.section3 .case-study .card-section .card {
   border-right: 2px solid var(--bg);
   width: 30%;
 }
 
-.section3 .case-study .card-section .card p{
+.section3 .case-study .card-section .card p {
   margin-bottom: 2vh;
   font-weight: 200;
 }
 
-.section3 .case-study .card-section .card span{
+.section3 .case-study .card-section .card span {
   color: var(--color1);
   display: flex;
   align-items: center;
 }
 
-.section3 .case-study .card-section .card i{
+.section3 .case-study .card-section .card i {
   font-size: 4vh;
 }
 
-.end{
+.end {
   width: 100%;
-  height: 2vh;
+  height: 150vh;
 }
